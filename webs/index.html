@@ -1,0 +1,50 @@
+<style>
+   *{
+      box-sizing: border-box;
+   }
+   textarea{
+      resize: none;
+      overflow: auto;
+      width: 100%;
+
+   }
+
+   #iarea{
+      min-height: 200px;
+      min-width: 400px;
+   }
+
+   #outputarea{
+      min-width: 400px;
+      min-height: 100px;
+   }
+</style>
+
+<textarea id="iarea">Write... </textarea>
+<br>
+<button id="Run" onclick="showtext()">/> Run</button>
+<br>
+
+<textarea id="outputarea"> Output...  </textarea>
+
+
+<script>
+//const runbutton = document.getElementById("increment");
+
+
+
+ function showtext(){
+    const ia = document.getElementById("iarea").value;
+    //const result = window.myfunc(ia);
+    
+    window.myfunc(ia).then(result => {
+         const o = document.getElementById("outputarea");
+         o.value = result
+
+    });
+    //o.value = result;
+
+
+ }
+
+</script>
